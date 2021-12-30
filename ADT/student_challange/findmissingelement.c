@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 struct Array {
 
@@ -18,6 +19,20 @@ int findOneMissingEle(struct Array *arr){
 
     if(s == sum) return -1;
     else return (sum - s);
+}
+
+int findOneMissingElementNonZStart(struct Array *arr){
+    int l = 0, diff = 0, h = 0, i = 0;
+    diff = arr->A[i] - 0;
+    for(i = 0; i < arr->length ; i++){
+        if((arr->A[i] - i) != diff)
+        {
+            printf("\n missing element is %d \n", (i + diff));
+            break;
+        }
+        printf("\n---------%d",i);
+    }
+ return i + diff;
 }
 
 void Insurt(struct Array *arr,int index, int x){
@@ -67,12 +82,24 @@ int main(){
 
     Delete(arr, 4);
 
-    for( i = 0; i < arr->length; i++){
-    printf("%d ",arr->A[i]);
-    }
 
     printf("\n %d",findOneMissingEle(arr));
 
+       for( i = 0; i < arr->length; i++){
+        arr->A[i] = i+95;
+    }
+    
+    for( i = 0; i < arr->length; i++){
+    printf("\n %d \n",arr->A[i]);
+    }
+
+    Delete(arr, 5);
+
+     for( i = 0; i < arr->length; i++){
+    printf("\n %d \n",arr->A[i]);
+    }
+
+    findOneMissingElementNonZStart(arr);
 
 
     return 0;
