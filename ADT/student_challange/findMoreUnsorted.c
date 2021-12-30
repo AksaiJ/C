@@ -65,6 +65,20 @@ int findMoreMissingElementNonZStart(struct Array *arr){
  return 1;
 }
 
+int findDuplicatesSorted(struct Array *arr){
+    int i, c=0;
+    for(i = 0, c =0; i< arr->length-1; i++){
+        if((arr->A[i] == arr->A[i+1])){
+            if(c == 0) {
+        printf("duplicate numbaer is %d", arr->A[i]); }
+        c++;
+        }
+        else{ 
+            c = 0;
+        }
+    }
+}
+
 
 int Max(struct Array *arr){
     int max = arr->A[0];
@@ -193,7 +207,22 @@ int main(){
 
     Display(arr);
 
-    printf(" making list unsorted  done\n \n \n \n");
+    arr->A[0] = 1;
+    arr->A[1] = 1;
+    arr->A[2] = 1;
+    arr->A[3] = 1;
+    arr->A[4] = 2;
+    arr->A[5] = 2;
+    arr->A[6] = 3;
+    arr->A[7] = 3;
+    arr->A[8] = 3;
+
+    printf("\n \n \n \n \n find duplicatesSorted function \n");
+    findDuplicatesSorted(arr);
+
+
+
+    printf(" \n \n \n \n \n \n \n making list unsorted  done\n \n \n \n");
 
 
         for( i = 0; i < arr->length/4; i++){
