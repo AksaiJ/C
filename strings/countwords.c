@@ -133,8 +133,8 @@ int countwords(char *string) {
     int c = 0; int i= 0;
       while(string[i]!= '\0'){
           if (string[i] == ' ')
-          {
-              c++;
+          { if(string[i-1] != ' '){
+              c++;}
           }
           i++;
           
