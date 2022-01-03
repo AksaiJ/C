@@ -36,8 +36,25 @@ int main (){
 
     //  char welc[] = "welcome";
 
-     //char *sarcasmCase = (char *)malloc(sizeof(char)*30);
-     char sarcasmCase[] = "HeLlOtHeRe";
+     char *sarcasmCase = malloc(sizeof(char)*30);
+      sarcasmCase[0] ='j';
+      sarcasmCase[1] ='H';
+      sarcasmCase[2] ='a';
+      sarcasmCase[3] ='h';
+      sarcasmCase[4] ='K';
+      sarcasmCase[5] ='j';
+      sarcasmCase[6] ='j';
+      sarcasmCase[7] ='Z';
+      sarcasmCase[8] ='a';
+      sarcasmCase[9] ='z';
+      sarcasmCase[10] ='K';
+      sarcasmCase[11] ='j';
+      sarcasmCase[12] ='\0';
+
+      // note you can fill a direct array all at once with stack string 
+      // just declare like char array then value, function still works;
+  
+      
 
     //  printf("%s",welc);
     // int i;
