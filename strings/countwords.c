@@ -81,8 +81,11 @@ int main (){
     char *pointertemp = tooggleCase(arraythree);
 
     printf(" arrray three,  should be same and togglecased %s \n %s",arraythree, pointertemp);
-
+    
+    
+    ch = getchar();
+    printf("\n \n %c",ch);
 
     return 1;
-    ch = getchar();
+ 
 }
