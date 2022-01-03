@@ -1,9 +1,10 @@
 #include <stdio.h>
 
 
-    char ** tooggleCase(char **charray){
+    char * tooggleCase(char *charray){
         int i;
-        printf("%s",charray);
+        printf("------%s",charray);
+        printf("%c",charray[0]);
         for(i = 0; charray[i] != '\0'; i++){
             if (charray[i] >= 65 && charray[i] <=90){
                 charray[i] = charray[i] + 32;
@@ -44,7 +45,7 @@ int main (){
 
     char *sarcasmCase2 = tooggleCase(sarcasmCase);
 
-    printf("%u %u \n", &welc, &welc[1]);
+    //printf("%u %u \n", &welc, &welc[1]);
 
     printf("%s sarcasm 1 \n",sarcasmCase);
 
