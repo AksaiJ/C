@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 
     char * tooggleCase(char *charray){
@@ -13,6 +14,7 @@
                 charray[i] = charray[i] - 32;
             }
         }
+         printf("\n------%s",charray);
         return charray;
 
     }   
@@ -20,28 +22,29 @@
 int main (){
 
 
-    char temp;
-    temp = 'A';
-    printf("%c",temp);
+    // char temp;
+    // temp = 'A';
+    // printf("%c",temp);
 
 
 
-     char X[5] = {'A', 'B', 'C', 'D', 'E',};
+    //  char X[5] = {'A', 'B', 'C', 'd', 'E',};
 
-     char x1[5] = {'65', '66', '67', '68', '69'};
+    //  char x1[5] = {'65', '66', '67', '68', '69'};
 
-     char *chararray ="hello";
+    //  char *chararray ="hello";
 
-     char welc[] = "welcome";
+    //  char welc[] = "welcome";
 
-     char *sarcasmCase = "WhAtAre";
+     //char *sarcasmCase = (char *)malloc(sizeof(char)*30);
+     char sarcasmCase[] = "HeLlOtHeRe";
 
-     printf("%s",welc);
-    int i;
+    //  printf("%s",welc);
+    // int i;
      //change case
-    for(i = 0; welc[i]!= '\0'; i++){
-        welc[i] = welc[i] - 32;
-    }
+    // for(i = 0; welc[i]!= '\0'; i++){
+    //     welc[i] = welc[i] - 32;
+    // }
 
     char *sarcasmCase2 = tooggleCase(sarcasmCase);
 
