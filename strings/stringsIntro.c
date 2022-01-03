@@ -49,14 +49,15 @@ int main (){
       sarcasmCase[9] ='z';
       sarcasmCase[10] ='K';
       sarcasmCase[11] ='j';
-      sarcasmCase[12] ='\0';
+      sarcasmCase[12] ='\0'; // this is important, without it the function
+      // behaves abnormaly
 
       // note you can fill a direct array all at once with stack string 
       // just declare like char array then value, function still works;
   
       
 
-    //  printf("%s",welc);
+    //  printf("%s",welc); 
     // int i;
      //change case
     // for(i = 0; welc[i]!= '\0'; i++){
