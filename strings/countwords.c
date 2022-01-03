@@ -31,6 +31,134 @@
         return mover;
     }
 
+    int countvowels(char *charayy){
+        int i = 0;
+        int count = 0;
+        while(charayy[i] != '\0'){
+            switch (charayy[i])
+            {
+           case 'a':
+            count++;
+                break;
+            case 'A':
+            count++;
+                break;
+            
+            case 'e':
+            count++;
+                break;
+            case 'E':
+            count++;
+                break;
+            
+            case 'i':
+            count++;
+                break;
+            case 'I':
+            count++;
+                break;
+            
+            case 'o':
+            count++;
+                break;
+            case 'O':
+            count++;
+                break;
+            
+            case 'u': count++;
+                break;
+            case 'U':
+                count++;
+                break;
+            
+            default:
+                break;
+
+            }
+            i++;
+        }
+        printf("\n vowels are %d",count);
+        return count;
+    }
+       int countconsonants(char *charayy){
+        int i = 0;
+        int count = 0;
+        while(charayy[i] != '\0'){
+            switch (charayy[i])
+            {
+            case 'a':
+            count++;
+                break;
+            case 'A':
+            count++;
+                break;
+            
+            case 'e':
+            count++;
+                break;
+            case 'E':
+            count++;
+                break;
+            
+            case 'i':
+            count++;
+                break;
+            case 'I':
+            count++;
+                break;
+            
+            case 'o':
+            count++;
+                break;
+            case 'O':
+            count++;
+                break;
+            
+            case 'u': count++;
+                break;
+            case 'U':
+                count++;
+                break;
+            
+            default:
+                break;
+            }
+            i++;
+        }
+        printf("\n consonants are : %d",(i-count));
+        return i - count;
+    }
+int countwords(char *string) {
+
+    int c = 0; int i= 0;
+      while(string[i]!= '\0'){
+          if (string[i] == ' ')
+          {
+              c++;
+          }
+          i++;
+          
+
+    }
+    printf("\n total words are: %d",c);
+    return c;
+
+}
+int countLetters(char *string){
+    int i = 0;
+      while(string[i]!= '\0'){
+         i++;
+          }
+    printf("\n total letters are : %d",i);
+    return i;
+}
+
+void printParaStat(char *string){
+    countvowels(string);   
+    countconsonants(string);
+    countwords(string);
+    countLetters(string);
+}
 
 
 int main (){
@@ -81,6 +209,12 @@ int main (){
     char *pointertemp = tooggleCase(arraythree);
 
     printf(" arrray three,  should be same and togglecased %s \n %s",arraythree, pointertemp);
+
+    countvowels(arraythree);
+    countconsonants(arraythree);
+
+
+    printParaStat(arraythree);
     
     
     ch = getchar();
