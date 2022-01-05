@@ -213,6 +213,24 @@ void reverseString(char * charray){
     }
 }
 
+char * reverseStringReturn(char * charray){
+
+    char * returner = stringToHeap(charray);
+    int i = 0; int j = 0; int t; int p;
+    for(j = 0; charray[j] != '\0'; j++){
+
+    }
+    p = j;
+    j = j - 1;
+    for(i = 0; i < j; i++, j--){
+        t = returner[i];
+        returner[i] = returner[j];
+        returner[j] = t;
+    }
+ 
+    returner[p-1] = '\0';
+    return returner;
+}
 int CompareStrings(char *string, char *string2){
     int i=0;
     while((string[i] != '\0')&&(string2[i] != '\0')){
@@ -287,6 +305,24 @@ int compareStringCaseInsensitive(char *string1, char *string2){
     
 }
 
+int palindromString(char *string){
+    char * reversed = reverseStringReturn(string);
+    int i = 0; int j; int k;
+
+    while(string[i] != '\0'){
+        j = string[i];
+        k = reversed[i];
+        if(k != j){
+            printf("\n strind is not palindrome");
+            return -1;
+        }
+
+        i++;
+    }
+    printf("\n string is palindrome\n");
+    return 1;
+}
+
 int main (){
 
     // int i = 0;
@@ -329,16 +365,21 @@ int main (){
     //     arraythree[i] = chararraytwo[i];
     //     i++;
     // }
-    char *stringcompareone = "hI";
-    char *stringcomparetwo = "hi";
+
+    // test code for testing string compares
+    char *stringcompareone= "madam";
+    char *stringcomparetwo = "sifgdfgr";
 
     stringcomparetwo = stringToHeap(stringcomparetwo);
     stringcompareone = stringToHeap(stringcompareone);
 
-    printf("\n result of comparison is %d \n",CompareStrings(stringcompareone, stringcomparetwo));
-    printf("\n result of comparison is %d \n",CompareByAlphabets(stringcompareone, stringcomparetwo));
-    printf("\n result of comparison is %d \n",compareStringCaseInsensitive(stringcompareone, stringcomparetwo));
+    // printf("\n result of comparison is %d \n",CompareStrings(stringcompareone, stringcomparetwo));
+    // printf("\n result of comparison is %d \n",CompareByAlphabets(stringcompareone, stringcomparetwo));
+    // printf("\n result of comparison is %d \n",compareStringCaseInsensitive(stringcompareone, stringcomparetwo));
 
+    palindromString(stringcompareone);
+
+    palindromString(stringcomparetwo);
 
 
 
