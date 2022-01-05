@@ -213,6 +213,80 @@ void reverseString(char * charray){
     }
 }
 
+int CompareStrings(char *string, char *string2){
+    int i=0;
+    while((string[i] != '\0')&&(string2[i] != '\0')){
+        if(string2[i] != string[i]){
+            return -1;
+        }
+    i++;
+    }
+    return 1;
+}
+
+int CompareByAlphabets(char *string, char* string2){
+    int i = 0, j = 0;
+    for(i=0, j=0; (string[i] != '\0') && (string2[j] != '\0'); i++, j++){
+    if(string[i] != string2[j]){
+            break;
+        }
+    }
+    if(string[i] == string2[j]){
+        printf("\n true equl");
+        return 1;
+    }
+    else if(string[i] < string2[j]){
+        printf("\n string one less");
+        return -1;
+    } 
+    
+    else {
+        printf("\n string two more");
+        return 1;
+    }
+    
+}
+
+int compareStringCaseInsensitive(char *string1, char *string2){
+
+    int i = 0; int j = 0;
+     while(string1[i] != '\0'){
+    if (string1[i] >= 'a' && string1[i] <= 'z'){
+                string1[i] = string1[i] - 32;
+            }
+        i++;
+     }
+
+    i = 0;
+    while(string2[i] != '\0'){
+    if (string2[i] >= 'a' && string2[i] <= 'z'){
+                string2[i] = string2[i] - 32;
+            }
+        i++;
+    }
+
+
+        for(i=0, j=0; (string1[i] != '\0') && (string2[j] != '\0'); i++, j++){
+    if(string1[i] != string2[j]){
+            break;
+        }
+    }
+    if(string1[i] == string2[j]){
+        printf("\n true equl");
+        return 1;
+    }
+    else if(string1[i] < string2[j]){
+        printf("\n string one less");
+        return -1;
+    } 
+    
+    else {
+        printf("\n string two more");
+        return 1;
+    }
+    
+}
+
 int main (){
 
     // int i = 0;
@@ -255,33 +329,17 @@ int main (){
     //     arraythree[i] = chararraytwo[i];
     //     i++;
     // }
+    char *stringcompareone = "hI";
+    char *stringcomparetwo = "hi";
+
+    stringcomparetwo = stringToHeap(stringcomparetwo);
+    stringcompareone = stringToHeap(stringcompareone);
+
+    printf("\n result of comparison is %d \n",CompareStrings(stringcompareone, stringcomparetwo));
+    printf("\n result of comparison is %d \n",CompareByAlphabets(stringcompareone, stringcomparetwo));
+    printf("\n result of comparison is %d \n",compareStringCaseInsensitive(stringcompareone, stringcomparetwo));
 
 
-
-    char *pointertemp = tooggleCase(arraythree);
-
-    printf(" arrray three,  should be same and togglecased %s \n %s",arraythree, pointertemp);
-
-    countvowels(arraythree);
-    countconsonants(arraythree);
-
-
-    printParaStat(arraythree);
-
-    char *username = malloc(sizeof(char)*30);
-
-    printf("\n Enter a username (only ascii letters allowed and no symbols)\n");
-    scanf("%s",username);
-      
-
-    username = stringToHeap(username);
-    validateUsername(username);
-    printf("\n username \"%s\" is created successfully\n",username);
-
-    char *reversedString = reverserString(arraythree);
-
-    reverseString(arraythree);
-    printf("\n username is %s reversed string is %s nkn\n",arraythree,reversedString);
 
 
 
