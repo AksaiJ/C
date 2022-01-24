@@ -411,6 +411,17 @@ void stringPermutationsPrinter(char * string, int k){
     static char Result[10];
     int i;
 
+    switch(k){
+        case 0 :  printf("\n \n k is %d",k); break;
+
+        case 1 :  printf("\n \n \t k is %d",k); break;
+
+        case 2 :  printf("\n \n \t \t k is %d",k); break;
+
+         case 3 :  printf("\n \n \t \t \tk is %d",k); break;
+
+    }
+    //   printf("\n k is %d",k);
    if(string[k] == '\0'){
        Result[k] = '\0';
        printf("\n %s",Result);
@@ -419,12 +430,30 @@ void stringPermutationsPrinter(char * string, int k){
    else {
 
        for(i=0; string[i] != '\0'; i++){
+           printf("\n \t i is %d and k is %d",i,k);
            if(Array[i] == 0){
+                 printf(" \n \t \t \tarray of i is zero value is %c",string[i]);
                Array[i] = 1;
-               Result[i] = string[i];
+               Result[k] = string[i];
+               printf("\n \t \t \t %s result is (after processing)", Result);
                stringPermutationsPrinter(string, k+1);
                Array[i] = 0;
+               
+    switch(k){
+        case 0 :  printf("\n \n came out of k %d  assigned array %d  place value 0", k+1, i); break;
 
+        case 1 :  printf("\n \n \t came out of k %d  assigned array %d  place value 0", k+1, i); break;
+
+        case 2 :  printf("\n \n \t \t came out of k %d  assigned array %d  place value 0", k+1, i); break;
+
+         case 3 :  printf("\n \n \t \t \tcame out of k %d  assigned array %d  place value 0", k+1, i); break;
+
+    }
+            //    printf("\n came out of k %d  assigned array %d  place value 0", k+1, i, i);
+
+           }
+           else{
+               printf("\n \t \t \tfalse %d of array is not 0 and k is %d", i,k);
            }
        }
    }
@@ -434,7 +463,7 @@ void stringPermutationsPrinter(char * string, int k){
 
 void stringPermutationsPrinterAuto(char *string){
     int i = countLetters(string);
-    stringPermutationsPrinter(string, i);
+    stringPermutationsPrinter(string, 0);
 }
 
 
@@ -443,21 +472,21 @@ int main (){
     // int i = 0;
     char ch;
 
-     char *sarcasmCase = malloc(sizeof(char)*30);
-      sarcasmCase[0] ='j';
-      sarcasmCase[1] ='H';
-      sarcasmCase[2] ='a';
-      sarcasmCase[3] ='h';
-      sarcasmCase[4] ='K';
-      sarcasmCase[5] ='j';
-      sarcasmCase[6] =' ';
-      sarcasmCase[7] ='Z';
-      sarcasmCase[8] ='a';
-      sarcasmCase[9] ='z';
-      sarcasmCase[10] ='K';
-      sarcasmCase[11] ='j';
-      sarcasmCase[12] ='\0';// this is important, without it the function
-      // behaves abnormaly
+    //  char *sarcasmCase = malloc(sizeof(char)*30);
+    //   sarcasmCase[0] ='j';
+    //   sarcasmCase[1] ='H';
+    //   sarcasmCase[2] ='a';
+    //   sarcasmCase[3] ='h';
+    //   sarcasmCase[4] ='K';
+    //   sarcasmCase[5] ='j';
+    //   sarcasmCase[6] =' ';
+    //   sarcasmCase[7] ='Z';
+    //   sarcasmCase[8] ='a';
+    //   sarcasmCase[9] ='z';
+    //   sarcasmCase[10] ='K';
+    //   sarcasmCase[11] ='j';
+    //   sarcasmCase[12] ='\0';// this is important, without it the function
+    //   // behaves abnormaly
 
       // note you can fill a direct array all at once with stack string 
       // just declare like char array then value, function still works;
@@ -481,12 +510,12 @@ int main (){
     //     i++;
     // }
 
-    // test code for testing string compares
-    char *stringcompareone= "mm";
-    char *stringcomparetwo = "sifgdfgr";
+    // // test code for testing string compares
+    // char *stringcompareone= "mm";
+    // char *stringcomparetwo = "sifgdfgr";
 
-    stringcomparetwo = stringToHeap(stringcomparetwo);
-    stringcompareone = stringToHeap(stringcompareone);
+    // stringcomparetwo = stringToHeap(stringcomparetwo);
+    // stringcompareone = stringToHeap(stringcompareone);
 
     // printf("\n result of comparison is %d \n",CompareStrings(stringcompareone, stringcomparetwo));
     // printf("\n result of comparison is %d \n",CompareByAlphabets(stringcompareone, stringcomparetwo));
@@ -496,18 +525,18 @@ int main (){
 
     // palindromString(stringcomparetwo);
 
-    duplicatePrinterUsingBits(stringcompareone);
-    duplicatePrinterUsingBits(stringcomparetwo);
+    // duplicatePrinterUsingBits(stringcompareone);
+    // duplicatePrinterUsingBits(stringcomparetwo);
 
-    char hi[] = "&mediCal454!";
-    char hi2[] = "!Decimal544&";
-    char hi3[] = "meimal544&";
+    // char hi[] = "&mediCal454!";
+    // char hi2[] = "!Decimal544&";
+    // char hi3[] = "meimal544&";
 
-    printf("\n %s and %s Anagram result %d ",hi, hi2, AnagramChecker(hi, hi2));
+    // printf("\n %s and %s Anagram result %d ",hi, hi2, AnagramChecker(hi, hi2));
 
-    printf("\n %s and %s Anagram result %d ",hi2, hi3, AnagramChecker(hi2, hi3));
+    // printf("\n %s and %s Anagram result %d ",hi2, hi3, AnagramChecker(hi2, hi3));
 
-    char perm[] = "abc";
+    char perm[] = "ab";
 
     stringPermutationsPrinterAuto(perm);
     
