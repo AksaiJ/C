@@ -31,4 +31,30 @@ int main(){
     parsedMyString[k]='\0';
     printf("%s", parsedMyString);
     
+
+
+//method 2
+//we directly swap characters
+// first we need to find length of string for that
+
+char myString2[] = "python";
+char reversedString[7];
+
+int m, n;
+
+for(n = 0; myString2[n]!='\0'; n++){
+
+}
+
+n = n-1;
+
+for(m = 0; m < n; m++, n--){
+    int t;
+    t = myString2[m];
+    myString2[m] = myString2[n];
+    myString2[n] = t;
+}
+
+printf("\n %s", myString2);
+
 }
