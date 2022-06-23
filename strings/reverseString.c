@@ -37,7 +37,7 @@ int main(){
 //we directly swap characters
 // first we need to find length of string for that
 
-char myString2[] = "python";
+char myString2[] = "pyth0000on";
 char reversedString[7];
 
 int m, n;
